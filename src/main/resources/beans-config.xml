@@ -43,5 +43,11 @@
           c:name="Jane"
           c:age="22"
     />
-    
+    <!-- ref 參考注入 1 -->
+    <bean id="t1" class="com.mycompany.springbasic1102.di.Teacher" c:name="Happy"/>
+    <bean id="s7" class="com.mycompany.springbasic1102.di.Student">
+        <property name="name" value="Go" />
+        <property name="age" value="22" />
+        <property name="teacher" ref="t1" />
+    </bean>
 </beans>
