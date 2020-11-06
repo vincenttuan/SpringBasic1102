@@ -22,7 +22,8 @@ public class Test_Student2 {
         System.out.println(s6);
         Student s7 = ctx.getBean("s7", Student.class);
         System.out.println(s7);
-        
+        Student s8 = ctx.getBean("s8", Student.class);
+        System.out.println(s8);
         ctx.close();
     }
 }

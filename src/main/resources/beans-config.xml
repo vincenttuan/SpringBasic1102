@@ -50,4 +50,14 @@
         <property name="age" value="22" />
         <property name="teacher" ref="t1" />
     </bean>
+    
+    <!-- ref 參考注入 2 -->
+    <bean id="t2" class="com.mycompany.springbasic1102.di.Teacher"/>
+    <bean id="s8" class="com.mycompany.springbasic1102.di.Student">
+        <property name="name" value="Go" />
+        <property name="age" value="22" />
+        <property name="teacher" ref="t2" />
+        <!-- 注入參考資料 -->
+        <property name="teacher.name" value="Lucky" />
+    </bean>
 </beans>
