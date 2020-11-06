@@ -1,6 +1,7 @@
 package di;
 
 import com.mycompany.springbasic1102.di.Student;
+import com.mycompany.springbasic1102.di.Teacher;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -26,6 +27,8 @@ public class Test_Student2 {
         System.out.println(s8);
         Student s9 = ctx.getBean("s9", Student.class);
         System.out.println(s9);
+        Teacher t3 = ctx.getBean("t3", Teacher.class);
+        System.out.println(t3);
         ctx.close();
     }
 }
