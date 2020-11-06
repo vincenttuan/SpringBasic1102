@@ -134,4 +134,11 @@
           c:begin="1"
           c:end="39"
     />
+    <bean id="lotto3" 
+          class="com.mycompany.springbasic1102.di.Lotto"
+          scope="prototype"
+          p:amount="5"
+          p:begin="1"
+          p:end="39"
+    />
 </beans>

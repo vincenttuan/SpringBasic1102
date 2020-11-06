@@ -42,6 +42,8 @@ public class Test_Student2 {
         Lotto lotto4 = ctx.getBean("lotto2", Lotto.class);
         System.out.println("lotto4: " + lotto4);
         
+        Lotto lotto5 = ctx.getBean("lotto3", Lotto.class);
+        System.out.println("lotto5: " + lotto5);
         ctx.close();
     }
 }
