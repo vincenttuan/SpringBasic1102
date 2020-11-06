@@ -3,6 +3,7 @@ package com.mycompany.springbasic1102.di;
 public class Student {
     private String name;
     private Integer age;
+    private Teacher teacher;
 
     public Student() {
     }
@@ -10,6 +11,14 @@ public class Student {
     public Student(String name, Integer age) {
         this.name = name;
         this.age = age;
+    }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
     public String getName() {
@@ -35,12 +44,13 @@ public class Student {
     public void destroy() {
         System.out.println("Student destroy()...");
     }
-    
+
     @Override
     public String toString() {
-        return "Student{" + "name=" + name + ", age=" + age + '}';
+        return "Student{" + "name=" + name + ", age=" + age + ", teacher=" + teacher + '}';
     }
-
+    
+    
     
     
 }
