@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:c="http://www.springframework.org/schema/c"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
@@ -21,5 +23,17 @@
         <constructor-arg value="Anita" index="0" type="java.lang.String" />
         <constructor-arg value="18" index="1" type="java.lang.Integer" />
     </bean>
+    <!-- 使用 p 命名空間方法注入 -->
+    <bean id="s4" 
+          class="com.mycompany.springbasic1102.di.Student"
+          p:name="Tom"
+          p:age="20"
+    />
+    <!-- 使用 c 命名空間建構子注入 -->
+    <bean id="s5" 
+          class="com.mycompany.springbasic1102.di.Student"
+          c:name="Jo"
+          c:age="21"
+    />
     
 </beans>
