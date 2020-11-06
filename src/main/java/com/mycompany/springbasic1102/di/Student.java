@@ -27,7 +27,15 @@ public class Student {
     public void setAge(Integer age) {
         this.age = age;
     }
-
+    
+    public void init() {
+        System.out.println("Student init()...");
+    }
+    
+    public void destroy() {
+        System.out.println("Student destroy()...");
+    }
+    
     @Override
     public String toString() {
         return "Student{" + "name=" + name + ", age=" + age + '}';

@@ -35,5 +35,13 @@
           c:name="Jo"
           c:age="21"
     />
+    <!-- 使用 xxx-method 配置 -->
+    <bean id="s6" 
+          class="com.mycompany.springbasic1102.di.Student"
+          init-method="init"
+          destroy-method="destroy"
+          c:name="Jane"
+          c:age="22"
+    />
     
 </beans>
