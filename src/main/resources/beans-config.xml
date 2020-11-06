@@ -60,4 +60,13 @@
         <!-- 注入參考資料 -->
         <property name="teacher.name" value="Lucky" />
     </bean>
+    <!-- ref 參考注入 3 -->
+    <bean id="s9" class="com.mycompany.springbasic1102.di.Student">
+        <property name="name" value="諸葛亮" />
+        <property name="age" value="22" />
+        <property name="teacher">
+            <!-- ref 參考注入內部類別 -->
+            <bean class="com.mycompany.springbasic1102.di.Teacher" c:name="劉備" />
+        </property>
+    </bean>
 </beans>
