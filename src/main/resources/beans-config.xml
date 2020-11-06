@@ -126,5 +126,12 @@
     
     <!-- 工廠模式 FactoryBean -->
     <bean id="lotto" class="com.mycompany.springbasic1102.di.LottoFactory" />
-    
+    <!-- Bean 的作用域scope : prototype, singleton, request, session -->
+    <bean id="lotto2" 
+          class="com.mycompany.springbasic1102.di.Lotto"
+          scope="prototype"
+          c:amount="5"
+          c:begin="1"
+          c:end="39"
+    />
 </beans>

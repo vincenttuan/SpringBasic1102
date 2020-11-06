@@ -33,9 +33,14 @@ public class Test_Student2 {
         Teacher t4 = ctx.getBean("t4", Teacher.class);
         System.out.println(t4);
         Lotto lotto1 = ctx.getBean("lotto", Lotto.class);
-        System.out.println(lotto1);
+        System.out.println("lotto1: " + lotto1);
         Lotto lotto2 = ctx.getBean("lotto", Lotto.class);
-        System.out.println(lotto2);
+        System.out.println("lotto2: " + lotto2);
+        
+        Lotto lotto3 = ctx.getBean("lotto2", Lotto.class);
+        System.out.println("lotto3: " + lotto3);
+        Lotto lotto4 = ctx.getBean("lotto2", Lotto.class);
+        System.out.println("lotto4: " + lotto4);
         
         ctx.close();
     }
