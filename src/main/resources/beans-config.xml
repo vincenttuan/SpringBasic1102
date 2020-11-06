@@ -69,7 +69,7 @@
             <bean class="com.mycompany.springbasic1102.di.Teacher" c:name="劉備" />
         </property>
     </bean>
-    <!-- 集合注入 List -->
+    <!-- 集合注入 List/Set -->
     <bean id="t3" class="com.mycompany.springbasic1102.di.Teacher">
         <property name="name" value="Helen" />
         <property name="cls">
@@ -77,6 +77,13 @@
                 <value>甲班</value>
                 <value>乙班</value>
             </list>
+        </property>
+        <property name="students">
+            <set>
+                <ref bean="s1" />
+                <ref bean="s5" />
+                <ref bean="s7" />
+            </set>
         </property>
     </bean>
 </beans>
