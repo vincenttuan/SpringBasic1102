@@ -47,7 +47,7 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" + "name=" + name + ", age=" + age + ", teacher=" + teacher.getName() + '}';
+        return "Student{" + "name=" + name + ", age=" + age + ", teacher=" + (teacher == null ? "" : teacher.getName()) + '}';
     }
     
     
