@@ -18,8 +18,8 @@
     </bean>
     <!-- 建構子注入 -->
     <bean id="s3" class="com.mycompany.springbasic1102.di.Student">
-        <constructor-arg value="Anita" />
-        <constructor-arg value="18" />
+        <constructor-arg value="Anita" index="0" type="java.lang.String" />
+        <constructor-arg value="18" index="1" type="java.lang.Integer" />
     </bean>
     
 </beans>

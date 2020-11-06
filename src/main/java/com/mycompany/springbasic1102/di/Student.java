@@ -2,16 +2,16 @@ package com.mycompany.springbasic1102.di;
 
 public class Student {
     private String name;
-    private int age;
+    private Integer age;
 
     public Student() {
     }
 
-    public Student(String name, int age) {
+    public Student(String name, Integer age) {
         this.name = name;
         this.age = age;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -20,11 +20,11 @@ public class Student {
         this.name = name;
     }
 
-    public int getAge() {
+    public Integer getAge() {
         return age;
     }
 
-    public void setAge(int age) {
+    public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -32,5 +32,7 @@ public class Student {
     public String toString() {
         return "Student{" + "name=" + name + ", age=" + age + '}';
     }
+
+    
     
 }
