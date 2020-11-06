@@ -4,13 +4,16 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!-- bean definitions here -->
+    <!-- 方法注入 -->
     <bean id="s1" class="com.mycompany.springbasic1102.di.Student">
         <property name="name" value="John" />
         <property name="age" value="20" />
     </bean>
+    <!-- 方法注入 -->
     <bean id="s2" class="com.mycompany.springbasic1102.di.Student">
-        <property name="name" value="Mary" />
+        <property name="name">
+            <value>Mary</value>
+        </property>
         <property name="age" value="22" />
     </bean>
     
