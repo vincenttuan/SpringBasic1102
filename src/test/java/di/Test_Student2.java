@@ -12,6 +12,7 @@ public class Test_Student2 {
         System.out.println(s1);
         Student s2 = ctx.getBean("s2", Student.class);
         System.out.println(s2);
-        
+        Student s3 = ctx.getBean("s3", Student.class);
+        System.out.println(s3);
     }
 }
