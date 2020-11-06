@@ -123,4 +123,8 @@
         <property name="name" value="Helen" />
         <property name="students" ref="students" />
     </bean>
+    
+    <!-- 工廠模式 FactoryBean -->
+    <bean id="lotto" class="com.mycompany.springbasic1102.di.LottoFactory" />
+    
 </beans>

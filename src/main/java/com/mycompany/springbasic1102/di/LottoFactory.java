@@ -16,7 +16,7 @@ public class LottoFactory implements FactoryBean<Lotto>{
 
     @Override
     public boolean isSingleton() {
-        return true;
+        return false;
     }
 
     

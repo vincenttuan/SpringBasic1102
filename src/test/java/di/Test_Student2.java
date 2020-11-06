@@ -1,5 +1,6 @@
 package di;
 
+import com.mycompany.springbasic1102.di.Lotto;
 import com.mycompany.springbasic1102.di.Student;
 import com.mycompany.springbasic1102.di.Teacher;
 import org.junit.Test;
@@ -31,6 +32,11 @@ public class Test_Student2 {
         System.out.println(t3);
         Teacher t4 = ctx.getBean("t4", Teacher.class);
         System.out.println(t4);
+        Lotto lotto1 = ctx.getBean("lotto", Lotto.class);
+        System.out.println(lotto1);
+        Lotto lotto2 = ctx.getBean("lotto", Lotto.class);
+        System.out.println(lotto2);
+        
         ctx.close();
     }
 }
