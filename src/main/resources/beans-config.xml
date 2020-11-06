@@ -69,21 +69,46 @@
             <bean class="com.mycompany.springbasic1102.di.Teacher" c:name="劉備" />
         </property>
     </bean>
-    <!-- 集合注入 List/Set -->
+    <!-- 集合注入 List/Set/Map -->
     <bean id="t3" class="com.mycompany.springbasic1102.di.Teacher">
         <property name="name" value="Helen" />
+        <!-- 班級 -->
         <property name="cls">
             <list> <!-- 可替換 <array> -->
                 <value>甲班</value>
                 <value>乙班</value>
             </list>
         </property>
+        <!-- 學生 -->
         <property name="students">
             <set>
                 <ref bean="s1" />
                 <ref bean="s5" />
                 <ref bean="s7" />
             </set>
+        </property>
+        <!-- 科目 -->
+        <property name="subjects">
+            <map>
+                <entry>
+                    <key>
+                        <value>國文</value>
+                    </key>
+                    <value>3</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>數學</value>
+                    </key>
+                    <value>2</value>
+                </entry>
+                <entry>
+                    <key>
+                        <value>英文</value>
+                    </key>
+                    <value>1</value>
+                </entry>
+            </map>
         </property>
     </bean>
 </beans>
