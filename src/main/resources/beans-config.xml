@@ -134,11 +134,20 @@
           c:begin="1"
           c:end="39"
     />
+    
+    <util:set id="nums">
+        <value>1</value>
+        <value>2</value>
+        <value>3</value>
+        <value>4</value>
+        <value>5</value>
+    </util:set>
     <bean id="lotto3" 
           class="com.mycompany.springbasic1102.di.Lotto"
           scope="prototype"
           p:amount="5"
           p:begin="1"
-          p:end="39"
-    />
+          p:end="39">
+        <property name="nums" ref="nums" />
+    </bean>
 </beans>
