@@ -14,7 +14,9 @@ public class UserDAO {
         return users;
     }
     public Boolean existByName(String name) {
-        // block of code ...
-        return true;
+        return users.getNames().stream()
+                .filter(n -> n.equals(name))
+                .findFirst()
+                .isPresent();
     }
 }
