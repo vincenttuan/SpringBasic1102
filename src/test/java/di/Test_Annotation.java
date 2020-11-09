@@ -1,5 +1,6 @@
 package di;
 
+import com.mycompany.springbasic1102.di.annotation.UserController;
 import com.mycompany.springbasic1102.di.annotation.Users;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,10 +13,18 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class Test_Annotation {
     @Autowired
     private Users users;
+    
+    @Autowired
+    private UserController userController;
+    
     @Test
     public void t1() {
         // 一般模式
         System.out.println(users);
         
+        // MVC 模式
+        // 查詢所有的 User
+        Users users = userController.getAll();
+        System.out.println(users);
     }
 }
