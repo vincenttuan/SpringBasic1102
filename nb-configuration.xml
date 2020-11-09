@@ -9,6 +9,7 @@ Without this configuration present, some functionality in the IDE may be limited
     <spring-data xmlns="http://www.netbeans.org/ns/spring-data/1">
         <config-files>
             <config-file>src/main/resources/beans-config-2.xml</config-file>
+            <config-file>src/main/resources/beans-config-3.xml</config-file>
         </config-files>
         <config-file-groups/>
     </spring-data>
