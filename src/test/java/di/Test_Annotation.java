@@ -14,6 +14,8 @@ public class Test_Annotation {
     private Users users;
     @Test
     public void t1() {
+        // 一般模式
         System.out.println(users);
+        
     }
 }
