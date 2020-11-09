@@ -25,6 +25,18 @@
         <property name="name" value="VB" />
     </bean>   
     
-    
+    <!-- byType 自動配置 -->
+    <bean id="dept" class="com.mycompany.springbasic1102.di.bytype.Dept">
+        <property name="name" value="IT" />
+    </bean>
+    <bean id="car" class="com.mycompany.springbasic1102.di.bytype.Car">
+        <property name="name" value="BMW" />
+        <property name="price" value="2000000" />
+    </bean>
+    <bean id="emp" 
+          class="com.mycompany.springbasic1102.di.bytype.Emp"
+          autowire="byType">
+          <property name="name" value="Mark" /> 
+    </bean>
     
 </beans>
