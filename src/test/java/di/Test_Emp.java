@@ -14,6 +14,10 @@ public class Test_Emp {
         // byType
         Emp emp = ctx.getBean("emp", Emp.class);
         System.out.println(emp);
+        Emp emp2 = ctx.getBean("emp2", Emp.class);
+        System.out.println(emp2);
+        Emp emp3 = ctx.getBean("emp3", Emp.class);
+        System.out.println(emp3);
         ctx.close();
     }
 }

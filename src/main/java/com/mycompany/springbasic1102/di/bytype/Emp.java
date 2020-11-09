@@ -5,6 +5,21 @@ public class Emp {
     private Dept dept;
     private Motor motor;
 
+    public Emp() {
+    }
+
+    public Emp(Dept dept, Motor motor) {
+        this.dept = dept;
+        this.motor = motor;
+    }
+
+    public Emp(String name, Dept dept, Motor motor) {
+        this.name = name;
+        this.dept = dept;
+        this.motor = motor;
+    }
+
+    
     public String getName() {
         return name;
     }
