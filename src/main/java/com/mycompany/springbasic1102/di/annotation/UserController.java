@@ -13,4 +13,8 @@ public class UserController {
     public Users getAll() {
         return userService.findAllUser();
     }
+    
+    public Boolean existByName(String name) {
+        return userService.existByName(name);
+    }
 }

@@ -27,5 +27,7 @@ public class Test_Annotation {
         Users users = userController.getAll();
         System.out.println(users);
         // 請各別檢查 "John" 與 "Bob" 是否在 Users 列表中 ?
+        Boolean check = userController.existByName("John");
+        System.out.println(check);
     }
 }

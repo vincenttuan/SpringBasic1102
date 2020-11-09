@@ -13,4 +13,8 @@ public class UserService {
     public Users findAllUser() {
         return userDAO.queryUsers();
     }
+    
+    public Boolean existByName(String name) {
+        return userDAO.existByName(name);
+    }
 }

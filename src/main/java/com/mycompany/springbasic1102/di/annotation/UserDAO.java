@@ -15,6 +15,6 @@ public class UserDAO {
     }
     public Boolean existByName(String name) {
         // block of code ...
-        return false;
+        return true;
     }
 }
