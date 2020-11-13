@@ -1,5 +1,7 @@
 package com.mycompany.springbasic1102.aop;
 
+import java.util.Arrays;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -21,8 +23,12 @@ public class LogAspect {
     //@Before(value = "execution(* com.mycompany.springbasic1102.aop.*.*(..))") // 切入點表達式
     //@Before(value = "execution(* *.*(..))") // 切入點表達式
     @Before(value = "cut()") // 切入點參照
-    public void before() { 
-        System.out.println("前置通知:");
+    public void before(JoinPoint joinPoint) { 
+        // 獲取方法名稱
+        String methodName = joinPoint.getSignature().getName();
+        // 獲取方法參數
+        Object[] args = joinPoint.getArgs();
+        System.out.printf("前置通知 -> 方法名稱: %s, 方法參數: %s\n", methodName, Arrays.toString(args));
     }
     
     // 後置通知(Advice)

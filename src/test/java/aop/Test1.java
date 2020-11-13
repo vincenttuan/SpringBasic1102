@@ -11,7 +11,7 @@ public class Test1 {
         Calc calc = ctx.getBean("calcImpl", Calc.class);
         //System.out.println(calc.add(2, 3));
         //System.out.println(calc.mul(2, 3));
-        System.out.println(calc.div(4, 0));
+        System.out.println(calc.sub(4, 2));
         ctx.close();
     }
 }
