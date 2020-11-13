@@ -3,6 +3,7 @@ package com.mycompany.springbasic1102.proxy.dyn;
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
+import java.util.Arrays;
 
 public class DynProxy {
     private Object object;
@@ -20,7 +21,7 @@ public class DynProxy {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 // 加入公用程式
-                System.out.println("Log A...");
+                System.out.printf("Log A... 呼叫的方法: %s, 放置的參數: %s\n", method.getName(), Arrays.toString(args));
                 Object result = method.invoke(object, args); // 代理調用目標物件的方法
                 System.out.println("Log B...");
                 return result;
