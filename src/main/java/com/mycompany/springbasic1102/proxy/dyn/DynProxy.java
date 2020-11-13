@@ -19,7 +19,10 @@ public class DynProxy {
         InvocationHandler h = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+                // 加入公用程式
+                System.out.println("Log A...");
                 Object result = method.invoke(object, args); // 代理調用目標物件的方法
+                System.out.println("Log B...");
                 return result;
             }
         };
