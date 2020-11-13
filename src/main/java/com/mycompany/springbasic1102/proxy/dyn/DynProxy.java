@@ -2,6 +2,7 @@ package com.mycompany.springbasic1102.proxy.dyn;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
+import java.lang.reflect.Proxy;
 
 public class DynProxy {
     private Object object;
@@ -18,10 +19,11 @@ public class DynProxy {
         InvocationHandler h = new InvocationHandler() {
             @Override
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-                return null;
+                Object result = method.invoke(object, args); // 代理調用目標物件的方法
+                return result;
             }
         };
-        return null;
+        return Proxy.newProxyInstance(loader, interfaces, h);
     }
     
 }
