@@ -4,6 +4,7 @@ import java.util.Arrays;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
@@ -46,4 +47,10 @@ public class LogAspect {
         System.out.printf("返回通知: result= %s\n", result);
     }
     
+    // 例外通知(Advice)
+    @AfterThrowing(value = "cut()", throwing = "ex")
+    public void afterThrowing(Exception ex) {
+        //ex.printStackTrace();
+        System.out.printf("例外通知(Advice): ex= %s\n", ex);
+    }
 }
