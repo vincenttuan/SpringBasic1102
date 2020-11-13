@@ -1,5 +1,8 @@
 package com.mycompany.springbasic1102.aop;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CalcImpl implements Calc {
 
     @Override
