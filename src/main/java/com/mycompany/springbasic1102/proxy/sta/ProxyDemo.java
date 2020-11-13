@@ -29,7 +29,9 @@ class Proxy implements Subject {
 
 public class ProxyDemo {
     public static void main(String[] args) {
-        Subject subject = new RealSubject();
-        subject.request();
+//        Subject subject = new RealSubject();
+//        subject.request();
+        Proxy proxy = new Proxy(new RealSubject());
+        proxy.request();
     }
 }
