@@ -11,11 +11,18 @@ public class Test1 {
     @Test
     public void t1() {
         System.out.println(jdbcTemplate);
-        create();
+        //create();
+        create("Mary", 19, "女");
     }
     // CRUD - Create 新增資料
     private void create() {
         String sql = "Insert Into Emp(ename, age, sex) Values('John', 18, '男')";
         jdbcTemplate.update(sql);
     }
+    // CRUD - Create 新增資料2
+    private void create(String ename, Integer age, String sex) {
+        String sql = "Insert Into Emp(ename, age, sex) Values(?, ?, ?)";
+        jdbcTemplate.update(sql, ename, age, sex);
+    }
+    
 }
