@@ -1,10 +1,13 @@
 package jdbc;
 
+import com.mycompany.springbasic1102.jdbc.Emp;
 import java.util.List;
 import java.util.Map;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 public class Test1 {
     ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("jdbc-config.xml");
@@ -18,7 +21,9 @@ public class Test1 {
         //updateAgeById(1, 20);
         //deleteById(3);
         //readAll();
-        readAvgOfAge();
+        //readAvgOfAge();
+        //readAllforEntity();
+        readEntityById(2);
     }
     // CRUD - Create 新增資料
     private void create() {
@@ -50,6 +55,24 @@ public class Test1 {
         double avg = list.stream().mapToInt(m -> Integer.parseInt(m.get("age")+"")).average().getAsDouble();
         System.out.println(avg);
     }
+    // CRUD - Read 查詢2
+    private void readAllforEntity() {
+        String sql = "Select eid, ename, age, sex, ct From Emp";
+        // RowMapper
+        RowMapper<Emp> rm = new BeanPropertyRowMapper<>(Emp.class); 
+        List<Emp> emps = jdbcTemplate.query(sql, rm);
+        System.out.println(emps);
+    }
+    
+    // CRUD - Read 查詢單筆
+    private void readEntityById(Integer eid) {
+        String sql = "Select eid, ename, age, sex, ct From Emp Where eid=?"; 
+        RowMapper<Emp> rm = new BeanPropertyRowMapper<>(Emp.class);
+        //Emp emp = jdbcTemplate.queryForObject(sql, rm, eid);
+        Emp emp = jdbcTemplate.queryForObject(sql, new Object[]{eid}, rm);
+        System.out.println(emp);
+    }
+    
     // CRUD - Read 查詢平均年齡
     private void readAvgOfAge() {
         String sql = "SELECT avg(cast(age as double)) FROM APP.EMP ";
