@@ -1,5 +1,7 @@
 package jdbc;
 
+import java.util.List;
+import java.util.Map;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -15,6 +17,7 @@ public class Test1 {
         //create("DeleteMe", 19, "男");
         //updateAgeById(1, 20);
         //deleteById(3);
+        readAll();
     }
     // CRUD - Create 新增資料
     private void create() {
@@ -35,5 +38,15 @@ public class Test1 {
     private void deleteById(Integer eid) {
         String sql = "Delete From Emp Where eid = ?";
         jdbcTemplate.update(sql, eid);
+    }
+    // CRUD - Read 查詢
+    private void readAll() {
+        String sql = "Select eid, ename, age, sex, ct From Emp";
+        List<Map<String, Object>> list = jdbcTemplate.queryForList(sql);
+        System.out.println(list);
+        int sum = list.stream().mapToInt(m -> Integer.parseInt(m.get("age")+"")).sum();
+        System.out.println(sum);
+        double avg = list.stream().mapToInt(m -> Integer.parseInt(m.get("age")+"")).average().getAsDouble();
+        System.out.println(avg);
     }
 }
