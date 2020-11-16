@@ -11,6 +11,7 @@ Without this configuration present, some functionality in the IDE may be limited
             <config-file>src/main/resources/beans-config-2.xml</config-file>
             <config-file>src/main/resources/beans-config-3.xml</config-file>
             <config-file>src/main/resources/aop-config.xml</config-file>
+            <config-file>src/main/resources/jdbc-config.xml</config-file>
         </config-files>
         <config-file-groups/>
     </spring-data>
