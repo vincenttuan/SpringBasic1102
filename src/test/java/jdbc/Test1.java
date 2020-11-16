@@ -12,8 +12,9 @@ public class Test1 {
     public void t1() {
         System.out.println(jdbcTemplate);
         //create();
-        //create("Mary", 19, "女");
-        updateAgeById(1, 20);
+        //create("DeleteMe", 19, "男");
+        //updateAgeById(1, 20);
+        //deleteById(3);
     }
     // CRUD - Create 新增資料
     private void create() {
@@ -26,8 +27,13 @@ public class Test1 {
         jdbcTemplate.update(sql, ename, age, sex);
     }
     // CRUD - Update 更新資料
-    private void updateAgeById(Integer id, Integer age) {
+    private void updateAgeById(Integer eid, Integer age) {
         String sql = "Update Emp Set age=? Where eid=?";
-        jdbcTemplate.update(sql, age, id);
+        jdbcTemplate.update(sql, age, eid);
+    }
+    // CRUD = Delete 刪除資料
+    private void deleteById(Integer eid) {
+        String sql = "Delete From Emp Where eid = ?";
+        jdbcTemplate.update(sql, eid);
     }
 }
