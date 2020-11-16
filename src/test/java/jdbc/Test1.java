@@ -12,7 +12,8 @@ public class Test1 {
     public void t1() {
         System.out.println(jdbcTemplate);
         //create();
-        create("Mary", 19, "女");
+        //create("Mary", 19, "女");
+        updateAgeById(1, 20);
     }
     // CRUD - Create 新增資料
     private void create() {
@@ -24,5 +25,9 @@ public class Test1 {
         String sql = "Insert Into Emp(ename, age, sex) Values(?, ?, ?)";
         jdbcTemplate.update(sql, ename, age, sex);
     }
-    
+    // CRUD - Update 更新資料
+    private void updateAgeById(Integer id, Integer age) {
+        String sql = "Update Emp Set age=? Where eid=?";
+        jdbcTemplate.update(sql, age, id);
+    }
 }
