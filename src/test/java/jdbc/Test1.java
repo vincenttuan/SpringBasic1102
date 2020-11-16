@@ -17,7 +17,8 @@ public class Test1 {
         //create("DeleteMe", 19, "男");
         //updateAgeById(1, 20);
         //deleteById(3);
-        readAll();
+        //readAll();
+        readAvgOfAge();
     }
     // CRUD - Create 新增資料
     private void create() {
@@ -49,4 +50,11 @@ public class Test1 {
         double avg = list.stream().mapToInt(m -> Integer.parseInt(m.get("age")+"")).average().getAsDouble();
         System.out.println(avg);
     }
+    // CRUD - Read 查詢平均年齡
+    private void readAvgOfAge() {
+        String sql = "SELECT avg(cast(age as double)) FROM APP.EMP ";
+        double avg = jdbcTemplate.queryForObject(sql, Double.class);
+        System.out.println("avg=" + avg);
+    }
+    
 }
