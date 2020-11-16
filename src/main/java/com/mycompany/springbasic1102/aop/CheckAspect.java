@@ -1,6 +1,5 @@
 package com.mycompany.springbasic1102.aop;
 
-import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -13,7 +12,7 @@ import org.springframework.stereotype.Component;
 @Order(2)
 public class CheckAspect {
     // 公用表達式
-    @Pointcut(value = "execution(* com.mycompany.springbasic1102.aop.BMIImpl(..))")
+    @Pointcut(value = "execution(* com.mycompany.springbasic1102.aop.BmiImpl.*(..))")
     public void cut(){}
     
     // 環繞通知
