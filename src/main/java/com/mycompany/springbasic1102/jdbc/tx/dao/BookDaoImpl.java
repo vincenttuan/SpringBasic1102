@@ -25,7 +25,13 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public void updateWallet(Integer wid, Integer money) {
-        String sql = "Update Wallet set money = money - ? Where wid = ?";
+        // 先得到 Wallet 的 money 是否足夠 ?
+        String sql = "Select money From Wallet Where wid = ?";
+        int walletMoney = jdbcTemplate.queryForObject(sql, Integer.class, wid);
+        if(walletMoney < money) {
+            throw new RuntimeException("餘額不足!");
+        }
+        sql = "Update Wallet set money = money - ? Where wid = ?";
         jdbcTemplate.update(sql, money, wid);
     }
     
