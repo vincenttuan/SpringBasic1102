@@ -1,6 +1,6 @@
 package jdbc.tx;
 
-import com.mycompany.springbasic1102.jdbc.tx.BookDao;
+import com.mycompany.springbasic1102.jdbc.tx.dao.BookDao;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
