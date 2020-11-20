@@ -3,7 +3,7 @@ package com.mycompany.springbasic1102.aop;
 import org.springframework.stereotype.Component;
 
 @Component
-public class BMIImpl implements BMI {
+public class Bmi2Impl implements Bmi2 {
 
     @Override
     public Double calc(Double h, Double w) {
