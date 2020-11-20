@@ -13,16 +13,18 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookDao bookDao;
     
-    @Transactional(propagation = Propagation.REQUIRED, timeout = 2)
+    @Transactional(propagation = Propagation.REQUIRED, 
+            timeout = 2,
+            rollbackFor = {InsufficientAmount.class})
     @Override
     public void buyOne(Integer wid, Integer bid) throws InsufficientAmount {
         int price = bookDao.getPrice(bid);
         System.out.println("BookService 交易開始");
         bookDao.updateStock(bid);
-        try {
-            Thread.sleep(3000);
-        } catch (Exception e) {
-        }
+//        try {
+//            Thread.sleep(3000);
+//        } catch (Exception e) {
+//        }
         bookDao.updateWallet(wid, price);
         System.out.println("BookService 交易完成");
     }

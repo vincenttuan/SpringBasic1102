@@ -18,8 +18,8 @@ public class Tx1 {
         int price = bookDao.getPrice(bid);
         // 進行交易
         System.out.println("交易開始");
-        bookDao.updateStock(bid);
-        bookDao.updateWallet(wid, price);
-        System.out.println("交易完成");
+//        bookDao.updateStock(bid);
+//        bookDao.updateWallet(wid, price);
+//        System.out.println("交易完成");
     }
 }
