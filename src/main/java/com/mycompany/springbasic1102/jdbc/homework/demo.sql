@@ -1,0 +1,33 @@
+CREATE TABLE Account (
+    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, -- 主鍵序號
+    aname varchar(20) not null, -- 帳戶名稱
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE Advert (
+    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, -- 主鍵序號
+    text VARCHAR(50) not null, -- 廣告文案
+    aid INTEGER NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (aid) REFERENCES Account(id)
+);
+
+CREATE TABLE Budget (
+    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY, -- 主鍵序號
+    cash INTEGER NOT NULL, -- 預算
+    aid INTEGER NOT NULL,
+    PRIMARY KEY (id),
+    FOREIGN KEY (aid) REFERENCES Account(id)
+);
+
+INSERT INTO Account(ANAME) VALUES('A');
+INSERT INTO Account(ANAME) VALUES('B');
+
+INSERT INTO Advert(TEXT, AID) VALUES('aaa', 1);
+INSERT INTO Advert(TEXT, AID) VALUES('bbb', 2);
+INSERT INTO Advert(TEXT, AID) VALUES('ccc', 2);
+INSERT INTO Advert(TEXT, AID) VALUES('ddd', 1);
+INSERT INTO Advert(TEXT, AID) VALUES('eee', 2);
+
+INSERT INTO Budget(CASH, AID) VALUES(100, 1);
+INSERT INTO Budget(CASH, AID) VALUES(200, 2);
