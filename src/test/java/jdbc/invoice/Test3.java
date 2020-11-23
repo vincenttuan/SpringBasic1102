@@ -21,6 +21,7 @@ public class Test3 {
     private InvoiceDao invoiceDao;
     @Test
     public void t3() {
-        System.out.println(invoiceDao.queryIntem());
+        List<Item> items = invoiceDao.queryIntem();
+        System.out.println(items);
     }
 }
