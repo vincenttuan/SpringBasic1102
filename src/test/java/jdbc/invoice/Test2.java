@@ -21,10 +21,10 @@ public class Test2 {
                 .addKeys("id")
                 .newResultSetExtractor(Item.class);
         String sql = "SELECT  im.ID, im.AMOUNT, \n"
-                + "        inv.ID as invoice_id, inv.INVDATE as invoice_invdate,\n"
-                + "        ip.ID as product_id, ip.TEXT as product_text, ip.PRICE as product_price, \n"
-                + "        ip.INVENTORY as product_inventory\n"
-                + "FROM ITEM im, Invoice inv, ItemProduct ip\n"
+                + "inv.ID as invoice_id, inv.INVDATE as invoice_invdate,\n"
+                + "ip.ID as product_id, ip.TEXT as product_text, ip.PRICE as product_price, \n"
+                + "ip.INVENTORY as product_inventory \n"
+                + "FROM ITEM im, Invoice inv, ItemProduct ip \n"
                 + "WHERE im.INVID = inv.ID AND im.IPID = ip.ID";
         List<Item> items = jdbcTemplate.query(sql, mapper);
         System.out.println(items);
