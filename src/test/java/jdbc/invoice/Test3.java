@@ -56,6 +56,6 @@ public class Test3 {
                 map.entrySet().stream().max(Comparator.comparing(entry -> entry.getValue())).get()
         );
         //哪一張發票價值最高（請練習看看）?
-
+        System.out.println("哪一張發票價值最高?");
     }
 }
