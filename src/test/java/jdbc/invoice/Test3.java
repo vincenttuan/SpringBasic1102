@@ -36,6 +36,12 @@ public class Test3 {
                 .collect(groupingBy(item-> item.getInvoice().getId(), Collectors.counting()))
         );
         //每一張發票價值多少?
+        System.out.println("每一張發票價值多少?");
+        System.out.println(
+            items.stream()
+                .collect(groupingBy(item-> item.getInvoice().getId(), 
+                        Collectors.summingInt(item -> item.getAmount() * item.getProduct().getPrice())))
+        );
         //每一樣商品各賣了多少?
         //哪一件商品賣得錢最多?
         //哪一張發票價值最高（請練習看看）?
