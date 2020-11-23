@@ -22,12 +22,14 @@ public class Test1 {
             Item item = new Item();
             item.setId(rs.getInt("id")); // 注入 id
             item.setAmount(rs.getInt("amount"));  // 注入 amount
-            Integer ipid = rs.getInt("ipid");
+            
             // 注入 product 物件
+            Integer ipid = rs.getInt("ipid");
             String sql_1 = "SELECT * FROM ITEMPRODUCT WHERE id = ?";
             ItemProduct product = jdbcTemplate.queryForObject(
                     sql_1, new BeanPropertyRowMapper<>(ItemProduct.class), ipid);
             item.setProduct(product); //  // 注入 product 物件
+            
             // 注入 invoice 物件
             Integer invid = rs.getInt("invid");
             String sql_2 = "SELECT * FROM INVOICE WHERE id = ?";
