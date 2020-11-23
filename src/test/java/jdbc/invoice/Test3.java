@@ -37,13 +37,6 @@ public class Test3 {
             items.stream()
                 .collect(groupingBy(item-> item.getInvoice().getId(), Collectors.counting()))
         );
-        //每一張發票價值多少?
-        System.out.println("每一張發票價值多少?");
-        System.out.println(
-            items.stream()
-                .collect(groupingBy(item-> item.getInvoice().getId(), 
-                                    Collectors.summingInt(item -> item.getAmount() * item.getProduct().getPrice())))
-        );
         //每一樣商品各賣了多少?
         System.out.println("每一樣商品各賣了多少?");
         Map<String, Integer> map = items.stream()
@@ -55,7 +48,19 @@ public class Test3 {
         System.out.println(
                 map.entrySet().stream().max(Comparator.comparing(entry -> entry.getValue())).get()
         );
+        
+        //每一張發票價值多少?
+        System.out.println("每一張發票價值多少?");
+        Map<Integer, Integer> map2 = items.stream().collect(groupingBy(item-> item.getInvoice().getId(), 
+                                    Collectors.summingInt(item -> item.getAmount() * item.getProduct().getPrice())));
+        System.out.println(map2);
         //哪一張發票價值最高（請練習看看）?
         System.out.println("哪一張發票價值最高?");
+        Integer invoice_id = map2.entrySet()
+                                 .stream()
+                                 .max(Comparator.comparing(entry -> entry.getValue()))
+                                 .get()
+                                 .getKey();
+        System.out.println(invoice_id);
     }
 }
