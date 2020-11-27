@@ -29,6 +29,7 @@
     <!-- JPA (Hibernate 配置) -->
     <bean id="sessionFactory"
         class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
         <!-- Entity 物件的存放位置 -->
         <property name="packagesToScan">
             <list>
@@ -48,9 +49,8 @@
     </bean>
     
     <!-- 配置 Hibernate 事務管理器 --> 
-    <bean id="transactionManager" 
-          class="org.springframework.orm.hibernate4.HibernateTransactionManager">   
-        <property name="sessionFactory" ref="sessionFactory" ></property> 
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
     </bean>
     
     <!-- 開啟註解驅動，對事務相關的註解進行掃描與解析 --> 
