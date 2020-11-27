@@ -4,7 +4,7 @@ import com.mycompany.springbasic1102.jpa.entities.Customer;
 import jpa.JPATemplate;
 import org.junit.Test;
 
-public class Test1 extends JPATemplate {
+public class Create extends JPATemplate {
     @Test
     public void t1() {
         Customer customer = new Customer();
