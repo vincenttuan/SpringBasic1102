@@ -47,11 +47,12 @@
         </property>
     </bean>
     
-    <!-- 配置事務管理器 --> 
+    <!-- 配置 Hibernate 事務管理器 --> 
     <bean id="transactionManager" 
-          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">   
-        <property name="dataSource" ref="dataSource" ></property> 
-    </bean> 
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">   
+        <property name="sessionFactory" ref="sessionFactory" ></property> 
+    </bean>
+    
     <!-- 開啟註解驅動，對事務相關的註解進行掃描與解析 --> 
     <tx:annotation-driven transaction-manager="transactionManager"></tx:annotation-driven>
 
