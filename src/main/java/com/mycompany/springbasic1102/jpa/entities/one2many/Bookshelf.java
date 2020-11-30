@@ -20,7 +20,7 @@ public class Bookshelf {
     @Column
     private String name;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "Bookshelf_id")
     private List<Book> books = new ArrayList<>();
 
