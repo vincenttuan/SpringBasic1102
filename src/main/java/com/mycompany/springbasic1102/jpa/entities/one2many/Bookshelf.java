@@ -2,6 +2,7 @@ package com.mycompany.springbasic1102.jpa.entities.one2many;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -20,7 +21,7 @@ public class Bookshelf {
     @Column
     private String name;
     
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     @JoinColumn(name = "Bookshelf_id")
     private List<Book> books = new ArrayList<>();
 
