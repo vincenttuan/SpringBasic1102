@@ -2,6 +2,7 @@ package com.mycompany.springbasic1102.jpa.entities.many2one;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -20,6 +21,10 @@ public class Orders {
     
     // 映射單向 n-1 的關聯關係
     @ManyToOne
+    // FetchType.LAZY 不預先select加載資料, 等到程式有使用到時才會去 Select
+    //@ManyToOne(fetch = FetchType.LAZY)
+    // FetchType.EAGER 預先select加載資料
+    //@ManyToOne(fetch = FetchType.EAGER)
     // 使用 @JoinColumn 來設定映射外鍵
     @JoinColumn(name = "customer_id", referencedColumnName = "id")
     private Customer customer;
