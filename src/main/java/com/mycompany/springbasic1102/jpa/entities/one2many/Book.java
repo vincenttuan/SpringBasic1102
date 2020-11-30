@@ -19,7 +19,7 @@ public class Book {
     private Integer price;
     @Column
     private Date ct;
-
+    
     public Integer getId() {
         return id;
     }
