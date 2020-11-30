@@ -23,7 +23,10 @@ public class Create extends JPATemplate {
         // 建立關聯關係
         e1.setDepartment(dept);
         e2.setDepartment(dept);
-        
+        // 因為在 Department 中有設定 mapby="department" <-- 由 Employee 的 department 來維護
+        // 所以下面不用寫
+        //dept.getEmployees().add(e1);
+        //dept.getEmployees().add(e2);
         // 儲存
         session.persist(dept);
         session.persist(e1);
