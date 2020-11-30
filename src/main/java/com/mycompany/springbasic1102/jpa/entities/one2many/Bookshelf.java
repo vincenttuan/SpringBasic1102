@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
@@ -17,7 +19,9 @@ public class Bookshelf {
     private Integer id;
     @Column
     private String name;
+    
     @OneToMany
+    @JoinColumn(name = "Book_id")
     private List<Book> books = new ArrayList<>();
 
     public Integer getId() {
