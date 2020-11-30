@@ -1,6 +1,6 @@
 package jpa.single;
 
-import com.mycompany.springbasic1102.jpa.entities.Customer;
+import com.mycompany.springbasic1102.jpa.entities.many2one.Customer;
 import java.util.List;
 import jpa.JPATemplate;
 import org.hibernate.Query;

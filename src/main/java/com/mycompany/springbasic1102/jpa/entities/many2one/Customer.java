@@ -1,4 +1,4 @@
-package com.mycompany.springbasic1102.jpa.entities;
+package com.mycompany.springbasic1102.jpa.entities.many2one;
 
 import java.io.Serializable;
 import javax.persistence.Column;
