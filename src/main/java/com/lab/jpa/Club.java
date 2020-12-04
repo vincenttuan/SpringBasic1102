@@ -15,7 +15,7 @@ public class Club {
     
     @Column
     private String name;
-
+    
     public Integer getId() {
         return id;
     }
