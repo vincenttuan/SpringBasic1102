@@ -29,6 +29,13 @@ public class Fund {
     @ManyToMany
     private Set<Cstock> cstocks = new LinkedHashSet<>();
 
+    public Fund() {
+    }
+
+    public Fund(String name) {
+        this.name = name;
+    }
+    
     public Integer getId() {
         return id;
     }

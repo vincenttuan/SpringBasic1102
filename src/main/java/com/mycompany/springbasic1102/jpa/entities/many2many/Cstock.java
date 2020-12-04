@@ -23,6 +23,13 @@ public class Cstock {
     @ManyToMany
     private Set<Fund> funds = new LinkedHashSet<>();
 
+    public Cstock() {
+    }
+
+    public Cstock(String symbol) {
+        this.symbol = symbol;
+    }
+    
     public Integer getId() {
         return id;
     }
