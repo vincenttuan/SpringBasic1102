@@ -1,9 +1,12 @@
 package com.lab.jpa;
 
+import java.util.LinkedHashSet;
+import java.util.Set;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -15,7 +18,7 @@ public class Department {
     
     @Column
     private String name;
-
+    
     public Integer getId() {
         return id;
     }
