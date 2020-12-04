@@ -2,6 +2,7 @@ package com.mycompany.springbasic1102.jpa.entities.many2many;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,7 +27,7 @@ public class Fund {
             joinColumns = {@JoinColumn(name = "fund_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "cstock_id", referencedColumnName = "id")}
     )
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Set<Cstock> cstocks = new LinkedHashSet<>();
 
     public Fund() {

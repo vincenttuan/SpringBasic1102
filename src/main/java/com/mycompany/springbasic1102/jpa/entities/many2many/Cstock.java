@@ -20,7 +20,7 @@ public class Cstock {
     @Column
     private String symbol;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "cstocks")
     private Set<Fund> funds = new LinkedHashSet<>();
 
     public Cstock() {
