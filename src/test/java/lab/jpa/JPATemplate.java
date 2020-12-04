@@ -16,7 +16,7 @@ public class JPATemplate {
 
     @Before
     public void before() {
-        ctx = new ClassPathXmlApplicationContext("jpa-config.xml");
+        ctx = new ClassPathXmlApplicationContext("jpa-lab-config.xml");
         // 取得連線工廠
         sessionFactory = ctx.getBean("sessionFactory", SessionFactory.class);
         // 取得連線物件
